@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orfanato Sementes do Futuro - Faça uma doação ou agende uma visita para ajudar crianças em necessidade.">
+    <title>Orfanato - Doações e Visitas</title>
+    <link rel="stylesheet" href="tiago.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+            margin: 0; /* Remove margens padrão */
+        }
+
+        header {
+            background-color: #4B6E28; /* Cor de fundo do cabeçalho */
+            color: #fff; /* Cor do texto no cabeçalho */
+            padding: 20px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        footer {
+            background-color: #4B6E28; /* Cor de fundo do rodapé */
+            color: #fff; /* Cor do texto no rodapé */
+            padding: 10px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+            margin-top: auto; /* Empurra o rodapé para o fundo da página */
+        }
+
+        section {
+            flex: 1; /* Permite que a seção cresça para ocupar o espaço disponível */
+            padding: 20px; /* Adiciona espaçamento à seção */
+            background-color: #f9f9f9; /* Cor de fundo da seção */
+        }
+
+        /* Estilos adicionais para o formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Espaçamento entre os campos do formulário */
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #4B6E28;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #3f5d22; /* Cor do botão ao passar o mouse */
+        }
+
+        .feedback {
+            margin-top: 15px; /* Espaçamento acima da área de feedback */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Faça uma Doação</h1>
+</header>
+
+<section>
+    <form id="doacao-form">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label for="valor">Valor da Doação (R$):</label>
+        <input type="number" id="valor" required min="1">
+
+        <label for="pagamento">Método de Pagamento:</label>
+        <select id="pagamento" required>
+            <option value="cartao">Cartão de Crédito</option>
+            <option value="boleto">Boleto Bancário</option>
+            <option value="pix">PIX</option>
+        </select>
+
+        <button type="submit">Doar Agora</button>
+    </form>
+    <div id="doacao-feedback" class="feedback"></div>
+    <div id="qrcode" style="margin-top: 20px;"></div>
+</section>
+
+<footer>
+    <p>© 2024 Seu Site</p>
+</footer>
+
+<script>
+    const form = document.getElementById('doacao-form');
+    const feedbackDiv = document.getElementById('doacao-feedback');
+    const qrcodeDiv = document.getElementById('qrcode');
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    // Validação do campo Nome em tempo real
+    document.getElementById('nome').addEventListener('input', function() {
+        if (this.value.trim().length < 3) {
+            feedbackDiv.textContent = "Por favor, insira um nome válido com pelo menos 3 caracteres.";
+            feedbackDiv.style.display = 'block';
+            feedbackDiv.style.color = 'red';
+        } else {
+            feedbackDiv.style.display = 'none';
+        }
+    });
+
+    // Validação do campo Valor em tempo real
+    document.getElementById('valor').addEventListener('input', function() {
+        if (this.value <= 0) {
+            feedbackDiv.textContent = "O valor da doação deve ser maior que zero.";
+            feedbackDiv.style.display = 'block';
+            feedbackDiv.style.color = 'red';
+        } else {
+            feedbackDiv.style.display = 'none';
+        }
+    });
+
+    // Evento de envio do formulário
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const nome = document.getElementById('nome').value.trim();
+        const valor = parseFloat(document.getElementById('valor').value.trim()).toFixed(2);
+        
+        // Checar se os campos estão válidos antes de prosseguir
+        if (nome.length < 3 || valor <= 0) {
+            feedbackDiv.textContent = "Por favor, preencha todos os campos corretamente.";
+            feedbackDiv.style.display = 'block';
+            feedbackDiv.style.color = 'red';
+            return;
+        }
+
+        // Desabilitar o botão temporariamente
+        submitButton.disabled = true;
+        feedbackDiv.style.display = 'none';
+
+        // Criar mensagem para o WhatsApp
+        const mensagem = `Doação recebida!\nNome: ${nome}\nValor: R$ ${valor}`;
+        const whatsappLink = `https://wa.me/5586974007368?text=${encodeURIComponent(mensagem)}`;
+
+        // Gerar QR Code do PIX
+        const chavePix = "seu_chave_pix_aqui"; // Insira sua chave PIX (telefone, e-mail ou chave aleatória)
+        const pixString = `00020101021126800014BR.GOV.BCB.PIX0115${chavePix}520400005303986540${valor}5802BR5915Orfanato Sementes do Futuro6009São Paulo62070503***6304...`; // Substitua os dados com as informações corretas
+        qrcodeDiv.innerHTML = ''; // Limpar QR Code anterior
+        $(qrcodeDiv).qrcode(pixString); // Gerar novo QR Code
+
+        // Exibir confirmação antes de redirecionar
+        if (confirm(`Confirmar a doação de R$ ${valor} feita por ${nome}?`)) {
+            window.open(whatsappLink, '_blank');
+            feedbackDiv.textContent = `${nome} fez uma doação de R$ ${valor}! Obrigado por sua generosidade!`;
+            feedbackDiv.style.display = 'block';
+            feedbackDiv.style.color = 'green';
+            form.reset(); // Limpar o formulário
+        } else {
+            feedbackDiv.textContent = "Doação cancelada.";
+            feedbackDiv.style.display = 'block';
+            feedbackDiv.style.color = 'red';
+        }
+
+        // Reabilitar o botão após o processo
+        submitButton.disabled = false;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sementes do Futuro</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Inclua aqui o seu arquivo CSS -->
+    <style>
+        /* Adicionando animações */
+        header h1 {
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        header p {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        section {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        img {
+            opacity: 0;
+            transform: scale(0.95);
+            animation: fadeInImage 2s ease-in-out forwards;
+        }
+
+        button {
+            position: relative;
+            background-color: #4b6e28;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #3b5722;
+            transform: translateY(-5px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Keyframes para animações */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInImage {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Sementes do Futuro</h1>
+        <p>Um lugar de amor e esperança para todas as crianças</p>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Visitas</a></li>
+                <li><a href="#">Doações</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Bem-vindo ao Orfanato Sementes do Futuro</h2>
+        <p>No Sementes do Futuro, acreditamos no poder do amor, da educação e da esperança. Aqui, cada criança é uma
+            semente que cuidamos para que floresça e alcance seu pleno potencial.</p>
+        <img src="https://example.com/image1.jpg" alt="Imagem das crianças" style="width: 100%; height: auto; border-radius: 10px;">
+        <p>Nosso orfanato oferece um ambiente seguro, acolhedor e cheio de carinho para crianças de todas as idades.
+            Venha fazer parte dessa jornada, seja como voluntário, doador ou simplesmente nos conhecendo melhor.</p>
+        <button>Saiba mais</button>
+    </section>
+
+    <section>
+        <h2>Como você pode ajudar</h2>
+        <p>Existem várias formas de nos apoiar e fazer a diferença na vida dessas crianças:</p>
+        <ul>
+            <li><strong>Doações:</strong> Ajude com recursos financeiros ou materiais.</li>
+            <li><strong>Voluntariado:</strong> Doe seu tempo e suas habilidades.</li>
+            <li><strong>Eventos:</strong> Participe dos nossos eventos beneficentes.</li>
+        </ul>
+        <img src="https://example.com/image2.jpg" alt="Imagem de voluntários" style="width: 100%; height: auto; border-radius: 10px;">
+        <button>Faça uma doação</button>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img class="footer-logo" src="https://example.com/logo.png" alt="Logo Sementes do Futuro">
+                <p>Sementes do Futuro - Cuidando do amanhã, hoje.</p>
+            </div>
+            <div class="footer-center">
+                <h3>Contato</h3>
+                <p>Email: contato@sementesdofuturo.org</p>
+                <p>Telefone: (11) 1234-5678</p>
+                <p>Endereço: Rua Esperança, 123, São Paulo - SP</p>
+            </div>
+            <div class="footer-right">
+                <h3>Siga-nos</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sementes do Futuro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

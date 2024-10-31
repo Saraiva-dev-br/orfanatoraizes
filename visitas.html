@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agende uma visita ao Orfanato Sementes do Futuro e ajude crianças em necessidade.">
+    <title>Orfanato - Agendamento de Visitas</title>
+    <link rel="stylesheet" href="tiago.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color:#4B6E28;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        section {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4B6E28;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color:#4B6E28;
+        }
+        .feedback {
+            margin-top: 20px;
+            color: #28a745;
+            display: none;
+        }
+        .social-share {
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4B6E28;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Agendamento de Visitas</h1>
+</header>
+
+<section>
+    <form id="agendamento-form">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" required>
+
+        <label for="horario">Horário:</label>
+        <input type="time" id="horario" required>
+
+        <button type="submit">Agendar Visita</button>
+    </form>
+
+    <div id="doacao-feedback" class="feedback"></div>
+
+    <div class="social-share">
+        <p>Compartilhe sua visita:</p>
+        <a href="#" onclick="shareOnFacebook()">Facebook</a> |
+        <a href="#" onclick="shareOnTwitter()">Twitter</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 Orfanato Raizes</p>
+</footer>
+
+<script>
+    const form = document.getElementById('agendamento-form');
+    const feedbackDiv = document.getElementById('doacao-feedback');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita o envio do formulário padrão
+        
+        // Coletar dados do formulário
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const data = document.getElementById('data').value;
+        const horario = document.getElementById('horario').value;
+
+        // Criar mensagem para WhatsApp
+        const mensagem = `Agendamento de Visita\nNome: ${nome}\nEmail: ${email}\nData: ${data}\nHorário: ${horario}`;
+        const whatsappLink = `https://wa.me/5586974007368?text=${encodeURIComponent(mensagem)}`;
+
+        // Redirecionar para o WhatsApp
+        window.open(whatsappLink, '_blank');
+
+        // Exibir feedback ao usuário
+        feedbackDiv.textContent = `${nome}, sua visita foi agendada para ${data} às ${horario}!`;
+        feedbackDiv.style.display = 'block';
+
+        // Limpar o formulário
+        form.reset();
+    });
+
+    function shareOnFacebook() {
+        const mensagem = `Estou agendando uma visita ao Orfanato Sementes do Futuro!`;
+        const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(mensagem)}`;
+        window.open(facebookLink, '_blank');
+    }
+
+    function shareOnTwitter() {
+        const mensagem = `Estou agendando uma visita ao Orfanato Sementes do Futuro!`;
+        const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(mensagem)}`;
+        window.open(twitterLink, '_blank');
+    }
+</script>
+
+</body>
+</html>

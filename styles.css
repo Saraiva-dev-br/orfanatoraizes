@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #005a8c;
+    color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 40px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .donate-button {
+    background-color: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .banner {
+    background-color: #fbb040;
+    color: #005a8c;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .banner-content h2 {
+    font-size: 36px;
+  }
+  
+  .about, .help, .work {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .help-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .help-options .option {
+    width: 30%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .social-media a img {
+    width: 32px;
+    margin: 0 10px;
+  }
+  .get-involved {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .get-involved-img {
+    width: 100%;
+    height: auto;
+    filter: brightness(50%);
+  }
+  
+  .get-involved-text h2 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .get-involved-button {
+    background-color: #ff007f;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .get-involved a img {
+    width: 40px;
+    height: 40px;
+  }
+    /* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h2 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #004080;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Seção Colabore com o Orfanato Santo Antônio */
+  #collaborate {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #f4f4f9;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #collaborate img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #collaborate .text-content {
+    max-width: 600px;
+    padding: 0 20px;
+  }
+  
+  #collaborate .text-content h2 {
+    font-size: 1.8em;
+    color: #004080;
+  }
+  
+  #collaborate .text-content p {
+    font-size: 1em;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.6;
+  }
+  
+  #collaborate .text-content .donate-button {
+    background-color: #ff007f;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  #collaborate .text-content .donate-button:hover {
+    background-color: #e60073;
+  }
+  
+  /* Seção Envolva-se Também */
+  #get-involved {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 60px 20px;
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  #get-involved img.get-involved-img {
+    width: 100%;
+    height: auto;
+    filter: brightness(40%);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  #get-involved .get-involved-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  #get-involved .get-involved-text h2 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  }
+  
+  #get-involved .get-involved-text p {
+    font-size: 1.2em;
+    color: #f0f0f0;
+    margin: 0 auto 20px auto;
+    max-width: 600px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  #get-involved .get-involved-button {
+    background-color: #ff007f;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  #get-involved .get-involved-button:hover {
+    background-color: #e60073;
+  }
+  
+  #get-involved a img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #25d366;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  #get-involved a img:hover {
+    transform: scale(1.1);
+  }
+  /* Reset Básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  /* Títulos Principais */
+  h2 {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #002d5c;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Seção Colabore com o Orfanato Santo Antônio */
+  #collaborate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #e1f5fe, #80d8ff);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    margin: 4rem auto;
+    max-width: 1100px;
+    transition: transform 0.4s ease;
+  }
+  
+  #collaborate:hover {
+    transform: scale(1.02);
+  }
+  
+  #collaborate img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  #collaborate img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  }
+  
+  #collaborate .text-content {
+    max-width: 700px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  #collaborate .text-content h2 {
+    font-size: 2.5em;
+    color: #002d5c;
+    margin-bottom: 1rem;
+  }
+  
+  #collaborate .text-content p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  
+  #collaborate .text-content .donate-button {
+    background: linear-gradient(45deg, #ff4081, #d500f9);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 8px 18px rgba(213, 0, 249, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  #collaborate .text-content .donate-button:hover {
+    background: linear-gradient(45deg, #ff80ab, #f500d5);
+    box-shadow: 0 12px 25px rgba(245, 0, 213, 0.5);
+    transform: translateY(-3px);
+  }
+  
+  /* Seção Envolva-se Também */
+  #get-involved {
+    position: relative;
+    color: #fff;
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('seu-imagem-url.jpg') no-repeat center center/cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    margin: 4rem auto;
+    max-width: 1100px;
+    overflow: hidden;
+  }
+  
+  #get-involved .get-involved-text {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  
+  #get-involved .get-involved-text h2 {
+    font-size: 2.8em;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+  }
+  
+  #get-involved .get-involved-text p {
+    font-size: 1.4em;
+    color: #ddd;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  #get-involved .get-involved-button {
+    background: linear-gradient(45deg, #ff4081, #d500f9);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 8px 18px rgba(255, 64, 129, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  #get-involved .get-involved-button:hover {
+    background: linear-gradient(45deg, #ff80ab, #f500d5);
+    box-shadow: 0 12px 25px rgba(255, 128, 171, 0.6);
+    transform: translateY(-3px);
+  }
+  
+  #get-involved a img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    background-color: #25d366;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  #get-involved a img:hover {
+    transform: scale(1.15);
+  }
+  

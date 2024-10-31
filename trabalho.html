@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto das Missionárias de Santo Antônio</title>
+    <!-- Incluindo o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #4B6E28;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .navbar-nav .nav-link {
+            color: white;
+        }
+        .card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        .doacao-btn {
+            background-color: #4B6E28;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+        .doacao-btn:hover {
+            background-color: #365019;
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-social a {
+            color: white;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Orfanato Raizes</h1>
+    <p>Nosso compromisso é com a dignidade e o acolhimento</p>
+</header>
+
+<!-- Barra de navegação responsiva -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Instituto</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Casa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="doacoes.html">Doações</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="visitas.html">Visitas</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container my-5" id="sobre">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <img src="trabalho.webp" class="card-img-top" alt="Trabalho comunitário">
+                <div class="card-body">
+                    <h2 class="card-title">Sobre a Missão</h2>
+                    <p class="card-text">A missão do orfanato é acolher e desenvolver crianças e jovens em situação de vulnerabilidade, oferecendo carinho, alimentação, saúde e dignidade.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4" id="educacao">
+            <div class="card">
+                <img src="educação.jpg" class="card-img-top" alt="Educação e Cuidados">
+                <div class="card-body">
+                    <h2 class="card-title">Educação e Assistência</h2>
+                    <p class="card-text">Proporcionamos educação, assistência médica, odontológica, apoio religioso e psicológico, sustentados por doações de pessoas e empresas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5" id="equipe">
+    <h2 class="text-center mb-4">Conheça Nossa Equipe</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="255720.jpeg" class="card-img-top" alt="Integrante da equipe">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Irmã Maria</h4>
+                    <p class="card-text">Fundadora e diretora do instituto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGIoRtZJ6seYpvvOD9ShjevQq-sVTZo5jTu3moVtuEeWbPgvD2J_sauJZG5qENrRTYcBZ7goTsR7VakLQpOKSyLfSObqrpvbD9SX2RzKT7YLznI2g0i0ezEiEihA_m2Ki3M_Tks0f3lCQ/s1600/resumo+-+cap%25C3%25ADtulo.png" class="card-img-top" alt="Integrante da equipe">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Irmã Clara</h4>
+                    <p class="card-text">Coordenadora das atividades educativas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="maria.jpg" class="card-img-top" alt="Integrante da equipe">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Irmã Ana</h4>
+                    <p class="card-text">Responsável pelos cuidados diários e alimentação.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h4>Contato</h4>
+            <p>Email: contato@orfanato.com</p>
+            <p>Telefone: +55 (11) 99999-9999</p>
+        </div>
+        <div>
+            <h4>Endereço</h4>
+            <p>Rua das Flores, 123</p>
+            <p>São Paulo, SP - Brasil</p>
+        </div>
+        <div class="footer-social">
+            <h4>Siga-nos</h4>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </div>
+    <p>&copy; 2024 Orfanato Raizes - Todos os direitos reservados</p>
+</footer>
+
+<!-- Incluindo o Bootstrap JS e dependências -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

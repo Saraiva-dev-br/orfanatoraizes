@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orfanato Sementes do Futuro - Faça uma doação ou agende uma visita para ajudar crianças em necessidade.">
+    <meta name="keywords" content="orfanato, doações, visitas, crianças, ajuda, voluntariado">
+    <title>Orfanato - Doações e Visitas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Fontes e layout base */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Estilos da Navbar */
+        .navbar {
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-logo img {
+    width: 150px; /* Ajuste o valor conforme o tamanho desejado */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+        .navbar-links {
+            margin-left: auto;
+        }
+
+        .navbar-links a {
+            margin: 5px 0; /* Margem para links empilhados */
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar-links a:hover {
+            color: #0056b3;
+        }
+
+        .donate-button {
+            background-color: #ff4b8b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .donate-button:hover {
+            background-color: #ff2f6b;
+        }
+
+        /* Estilos da Seção */
+        section {
+            margin-top: 70px; /* Para não sobrepor o navbar */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        .mission,
+        .vision,
+        .values {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #e6f7e6;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .values {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        button {
+            background-color: #4b6e28;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #3b5722;
+            transform: translateY(-5px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        img {
+            max-width: 60%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.95);
+            animation: fadeInImage 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInImage {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        footer {
+            background-color: #4b6e28;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-left,
+        .footer-center,
+        .footer-right {
+            margin: 10px 0;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-around;
+                width: 100%;
+            }
+        }
+
+        /* Estilos para navegação em dispositivos móveis */
+        @media (max-width: 767.98px) {
+            .navbar-collapse {
+                text-align: center; /* Centraliza os links em dispositivos móveis */
+            }
+
+            .navbar-nav {
+                flex-direction: column; /* Alinha os links em uma coluna */
+                width: 100%; /* Largura total para ocupar a tela */
+            }
+
+            .navbar-nav a {
+                padding: 10px; /* Espaçamento maior para cada link */
+                width: 100%; /* Links ocupam toda a largura */
+                box-shadow: none; /* Remove sombra nos links */
+                background-color: #f8f9fa; /* Fundo claro para links */
+                border-radius: 0; /* Remove bordas arredondadas */
+            }
+
+            .navbar-nav a:hover {
+                background-color: #e2e6ea; /* Fundo ao passar o mouse */
+            }
+
+            .donate-button {
+                width: 100%; /* Botão ocupa toda a largura */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar personalizada -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="navbar-logo">
+            <img src="WhatsApp Image 2024-10-30 at 23.30.34.jpeg" alt="Orfanato Sementes do Futuro">
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="somos.html">Quem somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="trabalho.html">Nosso Trabalho</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="visitas.html">Agende sua visita</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link donate-button" href="doacoes.html">FAÇA UMA DOAÇÃO</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="presentation">
+        <h2>Bem-vindo ao Orfanato Raizes</h2>
+        <img src="https://digitaispuccampinas.wordpress.com/wp-content/uploads/2016/05/orfanato.jpg" alt="Imagem das crianças">
+        <p>No Raizes, acreditamos no poder do amor, da educação e da esperança. Aqui, cada criança é uma semente que cuidamos para que floresça e alcance seu pleno potencial.</p>
+        <div class="mission">
+            <h3>Nossa Missão</h3>
+            <p>Oferecer um ambiente seguro e acolhedor, promovendo a educação e o desenvolvimento emocional de crianças e adolescentes.</p>
+        </div>
+        <div class="vision">
+            <h3>Nossa Visão</h3>
+            <p>Ser uma instituição reconhecida por transformar a vida de crianças e adolescentes em situação de vulnerabilidade social, promovendo um futuro melhor.</p>
+        </div>
+        <div class="values">
+            <h3>Nossos Valores</h3>
+            <ul>
+                <li><strong>Amor:</strong> O cuidado e o respeito são nossa base.</li>
+                <li><strong>Educação:</strong> Acreditamos que a educação é a chave para um futuro promissor.</li>
+                <li><strong>Resiliência:</strong> Fortalecer as crianças para enfrentar os desafios da vida.</li>
+                <li><strong>Esperança:</strong> Cultivamos a esperança em cada coração.</li>
+            </ul>
+        </div>
+        <button>Saiba mais </button>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>© 2024 Orfanato Raizes</p>
+            </div>
+            <div class="footer-center">
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-right">
+                <p>Contate-nos: contato@orfanatosementesdofuturo.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
